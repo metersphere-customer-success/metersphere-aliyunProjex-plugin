@@ -1,0 +1,106 @@
+{
+  "serviceIntegration": {
+    "label": "AliyunProjex",
+    "image": "/static/index.png",
+    "tips": "请登录阿里云效能平台，根据认证信息框尾部的提示信息，填写认证信息。",
+    "formItems": [
+      {
+        "name": "accessKeyID",
+        "type": "input",
+        "required": true,
+        "label": "AccessKey ID",
+        "message": "AccessKey ID",
+        "instructionsIcon": "/static/AKSK.png"
+      },
+      {
+        "name": "accessKeySecret",
+        "type": "password",
+        "required": true,
+        "label": "AccessKey Secret",
+        "message": "AccessKey Secret",
+        "instructionsIcon": "/static/AKSK.png"
+      },
+      {
+        "name": "organizationId",
+        "type": "input",
+        "required": true,
+        "label": "企业 ID",
+        "message": "企业 ID",
+        "instructionsIcon": "/static/org.png"
+      }
+    ]
+  },
+
+  "projectConfig": {
+    "formItems": [
+      {
+        "name": "projectIdentifier",
+        "type": "input",
+        "defaultValue": "",
+        "required": true,
+        "label": "项目标识符",
+        "withProjectCheck": true,
+        "instructionsIcon": "/static/projectKey.png"
+      },{
+        "name": "aliyunIssueTypeId",
+        "type": "select",
+        "defaultValue": "",
+        "required": true,
+        "i18n": true,
+        "cascade": "projectIdentifier",
+        "optionMethod": "getIssueTypes",
+        "label": "缺陷"
+      },
+      {
+        "name": "aliyunStoryTypeId",
+        "type": "select",
+        "defaultValue": "",
+        "required": false,
+        "i18n": true,
+        "cascade": "projectIdentifier",
+        "optionMethod": "getStoryTypes",
+        "label": "需求"
+      }
+    ,
+      {
+        "name": "projectxDesc",
+        "type": "textarea",
+        "defaultValue": "",
+        "required": false,
+        "label": "描述字段默认值"
+      }
+    ]
+  },
+
+  "accountConfig": {
+    "label": "",
+    "instructionsInfo": "该信息为通过阿里云Projex提交缺陷的用户认证信息，若未填写，则使用工作空间中配置的默认信息",
+    "i18n": false,
+    "formItems": [
+      {
+        "name": "accessKeyID",
+        "type": "input",
+        "required": true,
+        "label": "AccessKey ID",
+        "message": "AccessKey ID",
+        "instructionsIcon": "/static/AKSK.png"
+      },
+      {
+        "name": "accessKeySecret",
+        "type": "password",
+        "required": true,
+        "label": "AccessKey Secret",
+        "message": "AccessKey Secret",
+        "instructionsIcon": "/static/AKSK.png"
+      },
+      {
+        "name": "accountId",
+        "type": "input",
+        "required": true,
+        "label": "账户 ID",
+        "message": "账户 ID",
+        "instructionsIcon": "/static/userUUID.png"
+      }
+    ]
+  }
+}
